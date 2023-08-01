@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum Vitae</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
     <header>
-        <h1>Curriculum Vitae</h1>
-        <img src="img.png.jpg" alt="IT" />
+        <div class="img-container"></div>
+        <img src="img.png.jpg" alt="">
         <br> <br><br>
+        <h1>Curriculum Vitae</h1>
+
     </header>
     <nav>
         <ul>
@@ -21,21 +24,20 @@
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
-    <br><br>
+    <br>
     <main>
         <article>
-            <h2>Datos Personales</h2>
-            <p>Nombre: María Evangelina Nieva Atrib
-            </p>
-            <p>Edad: 36 años</p>
-            <p>Dirección: Catamarca - Argentina</p>
-            <p>Teléfono: 3123123123</p>
-            <p>e-mail: <a href="mailto:eva.n.atrib@gmail.com">eva.n.atrib@gmail.com</a>
+            <h3>Datos Personales</h3><br>
+            <p><strong>Nombre: </strong>María Evangelina Nieva Atrib</p>
+            <p><strong>Edad: </strong> 36 años</p>
+            <p><strong>Dirección: </strong>Catamarca - Argentina</p>
+            <p><strong>Teléfono: </strong> 3123123123</p>
+            <p><strong>e-mail: </strong> <a href="mailto:eva.n.atrib@gmail.com">eva.n.atrib@gmail.com</a>
         </article>
-        <br> <br>
+        <br>
         <article>
-            <h2>Educación</h2>
-            <p>Diplomatura en Desarrolladora Web Full Stack</p>
+            <h3>Educación</h3>
+            <p>Diplomatura en Desarrollo Web Full Stack</p>
             <p>Institución: Academia Numen - Argentina</p>
             <p>Año: 2022</p>
         </article>
@@ -43,106 +45,50 @@
         <article>
             <h3>Experiencia Laboral</h3>
             <p>Titulo: Empleada Administrativa</p>
-            <p>Empresa: Ministerio de Infraestructura y Obras Civiles
-            </p>
+            <p>Empresa: Ministerio de Infraestructura y Obras Civiles</p>
             <p>Año: 2008 hasta la actualidad</p>
 
         </article>
-        <br><br>
+        <br>
         <article>
 
             <h3>Habilidades</h3>
-            <p>HTML5</p>
-            <p>CSS3</p>
-            <p>JavaScript</p>
-            <p>Git</p>
-            <p>GitHub</p>
-            <p>Node js.</p>
-            <p>React js.</p>
-            <p>JQuery</p>
-            <p>Bootstrap</p>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>Node js.</li>
+                <li>React js.</li>
+                <li>JQuery</li>
+                <li>Bootstrap</li>
+            </ul>
         </article>
-        <br><br>
+        <br>
         <article>
-            <h2>Idiomas</h2>
+            <h3>Idiomas</h3>
             <p>Español: Nativo</p>
             <p>Inglés: Básico</p>
         </article>
-        <br><br>
+        <br>
         <article>
-            <h2>Intereses</h2>
-            <p>Deportes: Fútbol, Baloncesto, Voleibol, etc.</p>
+            <h3>Intereses</h3>
+            <p>Deportes: Fútbol, Bascket, Voleibol, etc.</p>
             <p>Música: Rock, Pop, Latino, etc.</p>
             <p>Cine: Terror, Acción, Comedia, etc.</p>
         </article>
 
         <aside>
-            <h4>último video visto</h4><br>
-            <video width="450" height="300" controls>
-                <source src="https://www.youtube.com/watch?v=H55A8flg17A" type="video/mp4">
+            <h4>Mi último video visto</h4><br>
+            <video width="450" height="300" controls autoplay="true" muted="true" loop="true">
+                <source src="https://www.youtube.com/watch?v=H55A8flg17A" type="video/mp3">
             </video>
         </aside>
-        <br><br>
+        <br>
     </main>
     <aside>
-<br><br>
-        <div class="Contacto">
-
-            <div class="formulario">
-                <h3>Formulario de contacto</h3>
-                <br>
-                <h5>Escríbeme y en breve me pondré en contacto contigo</h5>
-                <form action="submeter-formulario.php" method="post">
-                    <p>
-                        <label for="nombre" class="colocar_nombre">Nombre
-                            <span class="obligatorio">*</span>
-                        </label>
-                        <input type="text" name="introducir_nombre" id="nombre" required="obligatorio"
-                            placeholder="Escribe tu nombre">
-                    </p>
-
-                    <p>
-                        <label for="email" class="colocar_email">Email
-                            <span class="obligatorio">*</span>
-                        </label>
-                        <input type="email" name="introducir_email" id="email" required="obligatorio"
-                            placeholder="Escribe tu Email">
-                    </p>
-
-                    <p>
-                        <label for="telefone" class="colocar_telefono">Teléfono
-                        </label>
-                        <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
-                    </p>
-
-                    <p>
-                        <label for="asunto" class="colocar_asunto">Asunto
-                            <span class="obligatorio">*</span>
-                        </label>
-                        <input type="text" name="introducir_asunto" id="assunto" required="obligatorio"
-                            placeholder="Escribe un asunto">
-                    </p>
-
-                    <p>
-                        <label for="mensaje" class="colocar_mensaje">Mensaje
-                            <span class="obligatorio">*</span>
-                        </label>
-                        <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio"
-                            placeholder="Deja aquí tu comentario..."></textarea>
-                    </p>
-
-                    <button type="submit" name="enviar_formulario" id="enviar">
-                        <p>Enviar</p>
-                    </button>
-
-                    <p class="aviso">
-                        <span class="obligatorio"> * </span>los campos son obligatorios.
-                    </p>
-
-                </form>
-            </div>
-        </div>
-
+        <br><br>
         <footer>
             <p>Copyright &copy; 2023 CV Evangelina Nieva Atrib
 
