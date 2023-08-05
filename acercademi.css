@@ -1,0 +1,31 @@
+/* Importación de fuentes de google fonts */
+@import url('https://fonts.googleapis.com/css2? family= Fraunces:ital,wght@1,200 & family= Roboto:ital,wght@0,100;1,300 & display=swap');
+
+*{
+  box-sizing: border-box;
+  padding: auto;
+}
+
+body { 
+  /* background-image: linear-gradient(to left, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
+              
+  background-image: linear-gradient(to right bottom, #4bd8eb, #53c7ff, #a2acff, #e489da, #ff6f91);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 0px;
+  margin: 20px;
+}
+
+h1{
+    text-align:center ;
+    font-weight: bold;
+    letter-spacing:.4rem;
+    word-spacing:.6rem;
+    line-height: normal;
+    font-style: consolas;
+    font-variant: small-caps;
+    font-stretch:narrower;
+    font-size: xx-large;
+    color:#1a0249;
+    text-decoration: underline #1a0249; /* Subrayado */
+  }
+
