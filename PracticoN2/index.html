@@ -1,0 +1,91 @@
+<!-- PARTE 1: Estructura básica HTML y estilos CSS
+1. Crea un archivo "index.html" con la estructura básica de un documento HTML5.
+2. Agrega los elementos necesarios para obtener el nombre del jugador y para mostrar
+las opciones de "piedra", "papel" y "tijera".
+3. Aplica estilos CSS para dar formato a la interfaz de usuario del juego. -->
+
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Piedra, Papel o Tijera</title>
+
+</head>
+ 
+<body>
+  <div class="title">
+    <img src="img/logo_pipati.png" class="logo" alt="logo">
+  </div>
+  <br>
+
+</div>
+<div class="player" id="player-name"></div>
+<label form="nomJugador">Ingresá tu nombre:</label>
+<input type="text" class="nomJugador" id="nomJugador" placeholder="Nombre"><br />
+<button class="startBtn" id="startBtn">Jugar</button><br><br>
+</div>
+
+
+  <p class="instrucciones" id="instrucciones">
+    <em>Ingresá tu nombre de usuario para iniciar la partida.</em>
+</p> 
+
+
+
+  <div class="score disabled" id="score">
+    <div id="user-label" class="badge">Tú</div>
+    <div id="pc-label" class="badge">Pc</div>
+    <span id="user-score">0</span>-<span id="pc-score">0</span>
+    </div>
+
+    <p class="instrucciones" id="instrucciones">
+      <em>Elige una opción:</em><br/><br>
+    </p>
+
+
+      <div class="choices-election disabled" id="choices-election">
+      <div class="choice" id="choice" >
+        <img src="img/rocaUser.png" id="r" alt="Piedra">
+      </div>
+      <div class="choice">
+        <img src="/img/papel.png" id="p" alt="Papel">
+      </div>
+      <div class="choice">
+        <img src="/img/tijeraUser.png" id="t" alt="Tijera">
+      </div>
+    </div>
+
+    <div class="mensaje visibility" id="mensaje">
+      <p>
+          Elegiste <span class="eleccion" id="tuEleccion">-</span><br>
+          y la Pc eligió <span class="eleccion" id="pcEleccion">-</span>
+      </p>
+      <p id="gana-punto">¡Ganaste un punto! 🎉</p>
+  </div>
+   
+
+    <p class="festejo disabled" id="festejoJug"> 🏆 ¡FELICIDADES HAS GANADO! 🏆</p>
+    <p class="festejo disabled" id="festejoPc"> 💻 ¡LA COMPUTADORA GANA! 💻</p>
+ 
+    <button class="btn disabled" id="reiniciar"> Reiniciar </button>
+  
+    
+  <!-- Audios -->
+  <audio id="audioPlop" src="/audio/sound_plop.mp3" type="audio/mpeg"></audio>
+  <audio id="audioBow" src="/audio/sound_armswing2.mp3" type="audio/mpeg"></audio>
+  <audio id="audioLoser" src="/audio/sound_Loser Sound Effects (1).mp3" type="audio/mpeg"></audio>
+  <audio id="audioWinner" src="/audio/sound_Winning-sound-effect.mp3" type="audio/mpeg"></audio>
+
+  <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 - Todos los derechos reservados.</p>
+    </footer>
+
+  </body>
+
+<script src="piedraPapelTijera.js"></script>
+
+</html>
+
