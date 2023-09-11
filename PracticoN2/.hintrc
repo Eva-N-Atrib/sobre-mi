@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "button-type": "off",
+    "compat-api/css": "off",
+    "axe/parsing": "off"
+  }
+}
