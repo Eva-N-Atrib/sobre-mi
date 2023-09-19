@@ -95,15 +95,15 @@ else if (eleccionUser === "t") {
 }
 
 if (eleccionPc === 0) {
-    eleccionPc = "r"
+    eleccionPc = "Piedra"
     eleccionPc.src = "img/rocaPc.png";
 }
 else if (eleccionPc === 1) {
-    eleccionPc = "p"
+    eleccionPc = "Papel"
     eleccionPc.src = "img/papelPc.png";
 }
 else if (eleccionPc === 2) {
-    eleccionPc = "t"
+    eleccionPc = "Tijera"
     eleccionPc.src = "img/tijeraPc.png";
     
 }
