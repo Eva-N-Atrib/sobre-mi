@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+</head>
+
+<body>
+    <div class="title">
+        <img src="img/logo_pipati.png" class="title" alt="title">
+    </div>
+    <div class="player"></div>
+    <label for="nomJugador">Ingresá tu nombre:</label>
+    <input type="text" id="nomJugador" placeholder="Nombre"><br />
+    <button id="startBtn">Jugar</button>
+    </div>
+
+    <div class="marcador disabled" id="marcador">
+        <p class="name nombre-jugador" id="usuario">Jugador</p>
+        <p class="name nombre-pc">Pc</p>
+        <p class="score">
+        <span id="ptos-usuario">0</span>
+        <span>vs</span>
+        <span id="ptos-pc">0</span>
+        <!-- <h2 style="text-align: center;">¿Quién es el ganador?</h2><br>-->
+    </p>
+    </div>
+
+    <div class="mensaje visibility" id="mensaje">
+        <p>
+            Elegiste <span class="eleccion" id="eleccion-usuario">-</span>
+            La Pc eligió <span class="eleccion" id="eleccion-pc">-</span>
+        </p>
+        <p id="gana-punto">¡Genial, ganaste un punto! 😎</p>
+
+    </div>
+
+   
+    <div class="elige-tu-opcion disabled" id="elige-tu-opcion">
+        <div class="choices">
+            <button class="arma" id="piedra">
+                <img class="choice" src="img/rocaUser.png" alt="Piedra">
+            </button>
+            <button class="arma" id="papel">
+                <img class="choice" src="img/papel.png" alt="Papel">
+            </button>
+            <button class="arma" id="tijera">
+                <img class="choice" src="img/tijera.png" alt="Tijera">
+            </button>
+        </div>
+        <h4>Elegí tu próximo juego</h4>
+    </div>
+
+    <p class="festejo disabled" id="festejoJug"> 🏆 ¡FELICIDADES HAS GANADO! 🏆</p>
+    <p class="festejo disabled" id="festejoPc"> 💻 ¡LA COMPUTADORA GANA! 💻</p>
+    <p></p><strong>Resultado: </strong><span id="resultado"></span></p> <!-- El resultado se mostrará a
+    continuación de esta etiqueta-->
+    <button class="btn disabled" id="reiniciar"> Volver a jugar </button>
+    <!-- Resultados -->
+    <section>
+        <article>
+
+        </article>
+    </section>
+    <!-- Modal -->
+    <div id="modal" class="disabled"></div>
+    <footer>
+        <p>&copy; 2023 - Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -23,9 +23,7 @@ let festejoJug = document.querySelector("#festejoJug");
 let festejoPc = document.querySelector("#festejoPc");
 let score = document.getElementById("score");
 let mensaje = document.querySelector("#mensaje");
-let seleccionPc = document.getElementById("seleccionPc");
-let seleccionUser = document.getElementById("seleccionUser");
-let usuario = document.getElementById("usuario")
+let usuario = document.getElementById("#user-label")
 
 // al hacer click en jugar se llama a la función "validar" para corroborar que el campo del usuario no se encuentre vacío
 
@@ -47,8 +45,9 @@ function validar() {
 
 
 
-//en caso contrario se ejecuta el juego, y desaparece el form que pide el nombre de usuario.
-        usuario.textContent = nomJugador;
+// //en caso contrario se ejecuta el juego, y desaparece el form que pide el nombre de usuario.
+//         usuario.textContent = nomJugador;
+        
 
         var form = document.getElementById("player-name");
         form.classList.add("disabled");
@@ -59,9 +58,7 @@ function validar() {
 
       score.classList.remove("disabled");
       elegiTuArma.classList.remove("disabled");
-      seleccionUser.classList.remove("disabled");
-      seleccionPc.classList.remove("disabled");
-      
+            
 const piedra = document.getElementById("r");
 const papel = document.getElementById("p");
 const tijera = document.getElementById("t");
@@ -85,29 +82,29 @@ function iniciarMano (e) {
    //en caso de cada seleccion hecha por el usuario y la pc se mostrara por pantalla la imagen correspondiente
 
    if (eleccionUser === "r") {
-    seleccionUser.src = "img/rocaUser.png";
+    eleccionUser.src = "img/rocaUser.png";
     sonidoPlop()
 }
 else if (eleccionUser === "p") {
-    seleccionUser.src = "img/papelUser.png";
+    eleccionUser.src = "img/papelUser.png";
     sonidoPlop()
 }
 else if (eleccionUser === "t") {
-    seleccionUser.src = "img/tijeraUser.png";
+    eleccionUser.src = "img/tijeraUser.png";
     sonidoPlop()
 }
 
 if (eleccionPc === 0) {
     eleccionPc = "r"
-    seleccionPc.src = "img/rocaPc.png";
+    eleccionPc.src = "img/rocaPc.png";
 }
 else if (eleccionPc === 1) {
     eleccionPc = "p"
-    seleccionPc.src = "img/papelPc.png";
+    eleccionPc.src = "img/papelPc.png";
 }
 else if (eleccionPc === 2) {
     eleccionPc = "t"
-    seleccionPc.src = "img/tijeraPc.png";
+    eleccionPc.src = "img/tijeraPc.png";
     
 }
 
