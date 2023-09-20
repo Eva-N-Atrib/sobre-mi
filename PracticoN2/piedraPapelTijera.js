@@ -32,36 +32,25 @@ function validar() {
   var input = document.getElementById("nomJugador");
   var nomJugador = input.value.trim();
 
-
   //en caso de que el campo se encuentre vacío aparecerá el siguiente mensaje de error y NO se dará inicio al juego
 
   if (nomJugador === ""){
     alert ("Ingresa un Nombre para iniciar la partida");
     } else{
-      alert(`¡Bienvenido ${nomJugador} al juego!`);
-      console.log(nomJugador);
-      }
-      }
-
-
-
-// //en caso contrario se ejecuta el juego, y desaparece el form que pide el nombre de usuario.
-//         usuario.textContent = nomJugador;
-        
-
         var form = document.getElementById("player-name");
         form.classList.add("disabled");
-
         instrucciones.innerText = "El mejor de 3, ganará el juego";
-
+        
 // se modifica el texto de las instrucciones, se activa la visualización de los nombres, los marcadores y el selector de opciones para jugar
-
       score.classList.remove("disabled");
       elegiTuArma.classList.remove("disabled");
+      }
+      }
+
             
-const piedra = document.getElementById("r");
-const papel = document.getElementById("p");
-const tijera = document.getElementById("t");
+const piedra = document.getElementById("piedra");
+const papel = document.getElementById("papel");
+const tijera = document.getElementById("tijera");
 
 //Cuando se haga click en alguna de las opciones para jugar se llamará a la funcion "iniciarMano"
 
@@ -81,29 +70,29 @@ function iniciarMano (e) {
 
    //en caso de cada seleccion hecha por el usuario y la pc se mostrara por pantalla la imagen correspondiente
 
-   if (eleccionUser === "r") {
+   if (eleccionUser === "piedra") {
     eleccionUser.src = "img/rocaUser.png";
     sonidoPlop()
 }
-else if (eleccionUser === "p") {
+else if (eleccionUser === "papel") {
     eleccionUser.src = "img/papelUser.png";
     sonidoPlop()
 }
-else if (eleccionUser === "t") {
+else if (eleccionUser === "tijera") {
     eleccionUser.src = "img/tijeraUser.png";
     sonidoPlop()
 }
 
 if (eleccionPc === 0) {
-    eleccionPc = "Piedra"
+    eleccionPc = "piedra"
     eleccionPc.src = "img/rocaPc.png";
 }
 else if (eleccionPc === 1) {
-    eleccionPc = "Papel"
+    eleccionPc = "papel"
     eleccionPc.src = "img/papelPc.png";
 }
 else if (eleccionPc === 2) {
-    eleccionPc = "Tijera"
+    eleccionPc = "tijera"
     eleccionPc.src = "img/tijeraPc.png";
     
 }
@@ -111,15 +100,15 @@ else if (eleccionPc === 2) {
  // se comparan las elecciones de ambas jugadas y se llama a la función correspondiente.
 
  if (
-  eleccionUser==="r" && eleccionPc === "t" ||
-  eleccionUser==="p" && eleccionPc === "r"||
-  eleccionUser==="t" && eleccionPc === "p" )
+  eleccionUser==="piedra" && eleccionPc === "tijera" ||
+  eleccionUser==="papel" && eleccionPc === "piedra"||
+  eleccionUser==="tijera" && eleccionPc === "papel" )
   { ganaUsuario();
 }
 else if (
-  eleccionUser==="t" && eleccionPc === "r" ||
-  eleccionUser==="r" && eleccionPc === "p" ||
-  eleccionUser==="p" && eleccionPc === "t") 
+  eleccionUser==="tijera" && eleccionPc === "piedra" ||
+  eleccionUser==="piedra" && eleccionPc === "papel" ||
+  eleccionUser==="papel" && eleccionPc === "tijera") 
   { ganaPc();
 }
 else { empate()}
@@ -139,6 +128,9 @@ mensaje.classList.remove("visibility");
 
     else if (pcScore === 3){
         festejoPc.classList.remove("disabled");
+        reiniciar.classList.remove("disabled");
+        reiniciar.addEventListener("click", reiniciarJuego)
+    }
     }
     //Una vez alcanzados los 3 puntos se deshabilitará la opción de elegir la próxima mano y se habilitará el botón para "reiniciar" el juego.
 
@@ -146,19 +138,18 @@ mensaje.classList.remove("visibility");
     reiniciar.classList.remove("disabled");
     reiniciar.addEventListener("click", reiniciarJuego)
 }
-}   
 
 //Si el Usuario gana un punto se dispara esta función, se suma un punto al score y se imprime el mensaje por pantalla.
 
-function winUser () {
-  contenedorUserScore.innerText = ++ userScore;
+function userWin () {
+  contenedorUserScore.innerText = ++userScore;
   contenedorGanaPunto.innerText = "¡Punto Ganado! 😎"
   sonidoWinner()
 }
 
 //Si la Pc gana un punto se dispara esta función, se suma un punto al score y se imprime el mensaje por pantalla.
 
-function winPc() {
+function pcWin() {
   contenedorPcScore.innerText = ++pcScore;
   contenedorGanaPunto.innerText= "¡Punto para la Pc! 👎"
   sonidoLoser()
@@ -176,9 +167,7 @@ function reiniciarJuego() {
   //se deshabilita la visualizacion del boton "volver a jugar"
   let reiniciar = document.getElementById("reiniciar")
   reiniciar.classList.add("disabled");
-
   //se vuelve a activar la opcion para elegir la mano.
-
   elegiTuArma.classList.remove("disabled");
   mensaje.classList.add("visibility");
 
