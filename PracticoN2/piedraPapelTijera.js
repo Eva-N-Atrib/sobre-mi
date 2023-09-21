@@ -28,6 +28,7 @@ let usuario = document.getElementById("#user-label")
 // al hacer click en jugar se llama a la función "validar" para corroborar que el campo del usuario no se encuentre vacío
 
 startBtn.addEventListener("click", validar)
+
 function validar() {
   var input = document.getElementById("nomJugador");
   var nomJugador = input.value.trim();
@@ -69,36 +70,29 @@ function iniciarMano (e) {
   
 
    //en caso de cada seleccion hecha por el usuario y la pc se mostrara por pantalla la imagen correspondiente
-
-   if (eleccionUser === "piedra") {
-    eleccionUser.src = "img/rocaUser.png";
-    sonidoPlop()
+    if (eleccionUser === "piedra") {
+      eleccionUser = "piedra"
+      sonidoPlop()
 }
 else if (eleccionUser === "papel") {
-    eleccionUser.src = "img/papelUser.png";
-    sonidoPlop()
+  eleccionUser ="papel";
+      sonidoPlop()
 }
 else if (eleccionUser === "tijera") {
-    eleccionUser.src = "img/tijeraUser.png";
+  eleccionUser ="tijera";  
     sonidoPlop()
 }
 
 if (eleccionPc === 0) {
-    eleccionPc = "piedra"
-    eleccionPc.src = "img/rocaPc.png";
-}
+    eleccionPc = "piedra";
+  }
 else if (eleccionPc === 1) {
-    eleccionPc = "papel"
-    eleccionPc.src = "img/papelPc.png";
+    eleccionPc = "papel";
 }
 else if (eleccionPc === 2) {
-    eleccionPc = "tijera"
-    eleccionPc.src = "img/tijeraPc.png";
-    
-}
-
+    eleccionPc = "tijera";
+    }
  // se comparan las elecciones de ambas jugadas y se llama a la función correspondiente.
-
  if (
   eleccionUser==="piedra" && eleccionPc === "tijera" ||
   eleccionUser==="papel" && eleccionPc === "piedra"||
