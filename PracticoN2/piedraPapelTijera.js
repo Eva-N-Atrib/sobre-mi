@@ -28,6 +28,7 @@ let usuario = document.getElementById("#user-label")
 // al hacer click en jugar se llama a la función "validar" para corroborar que el campo del usuario no se encuentre vacío
 
 startBtn.addEventListener("click", validar)
+sonidoJeremy();
 window.onload = function() {
     reiniciarJuego();
 };
@@ -134,6 +135,7 @@ mensaje.classList.remove("visibility");
   if (pcScore === 3 || userScore === 3){
     if (userScore === 3){
         festejoJug.classList.remove("disabled");
+        sonidoAplausos();
     }
 
     else if (pcScore === 3){
@@ -215,7 +217,15 @@ function sonidoPlop(){
     audioWinner.play()
   }
 
+function sonidoJeremy() {
+  let audioJeremy = document.querySelector("#audioJeremy")
+  audioJeremy.play();
+}
 
+function sonidoAplausos(){
+  let audioAplausos=document.querySelector('#audioAplausos')
+  audioAplausos.play()
+}
 
 
 
