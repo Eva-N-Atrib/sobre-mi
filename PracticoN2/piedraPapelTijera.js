@@ -28,6 +28,9 @@ let usuario = document.getElementById("#user-label")
 // al hacer click en jugar se llama a la función "validar" para corroborar que el campo del usuario no se encuentre vacío
 
 startBtn.addEventListener("click", validar)
+window.onload = function() {
+    reiniciarJuego();
+};
 
 function validar() {
   var input = document.getElementById("nomJugador");
@@ -57,18 +60,31 @@ const tijera = document.getElementById("tijera");
 
 let imgArmas = document.querySelectorAll(".choice")
 imgArmas.forEach(boton => {
-    boton.addEventListener("click", iniciarMano);
+    boton.addEventListener("click", iniciarMano(boton));
 });
 
 //la elección de la Pc se calcula aleatoriamente y la del usuario según la imagen que haya seleccionado.
 
-function iniciarMano (e) {
+piedra.addEventListener('click', () => {
+  // Call your function with parameters here
+  iniciarMano("piedra");
+});
+
+papel.addEventListener('click', () => {
+  // Call your function with parameters here
+  iniciarMano("papel");
+});
+
+tijera.addEventListener('click', () => {
+  // Call your function with parameters here
+  iniciarMano("tijera");
+});
+
+function iniciarMano (eleccionUser) {
 
   let eleccionPc = Math.floor(Math.random()*3);
-  let eleccionUser= e.currentTarget.id;
   console.log(`Elecciones: ${eleccionPc} - ${eleccionUser}`);
   
-
    //en caso de cada seleccion hecha por el usuario y la pc se mostrara por pantalla la imagen correspondiente
     if (eleccionUser === "piedra") {
       eleccionUser = "piedra"
@@ -123,19 +139,20 @@ mensaje.classList.remove("visibility");
     else if (pcScore === 3){
         festejoPc.classList.remove("disabled");
         reiniciar.classList.remove("disabled");
-        reiniciar.addEventListener("click", reiniciarJuego)
+        // reiniciar.addEventListener("click", reiniciarJuego)
     }
     }
     //Una vez alcanzados los 3 puntos se deshabilitará la opción de elegir la próxima mano y se habilitará el botón para "reiniciar" el juego.
 
     elegiTuArma.classList.add("disabled");
     reiniciar.classList.remove("disabled");
-    reiniciar.addEventListener("click", reiniciarJuego)
+    
 }
+reiniciar.addEventListener("click", reiniciarJuego);
 
 //Si el Usuario gana un punto se dispara esta función, se suma un punto al score y se imprime el mensaje por pantalla.
 
-function userWin () {
+function ganaUsuario () {
   contenedorUserScore.innerText = ++userScore;
   contenedorGanaPunto.innerText = "¡Punto Ganado! 😎"
   sonidoWinner()
@@ -143,7 +160,7 @@ function userWin () {
 
 //Si la Pc gana un punto se dispara esta función, se suma un punto al score y se imprime el mensaje por pantalla.
 
-function pcWin() {
+function ganaPc() {
   contenedorPcScore.innerText = ++pcScore;
   contenedorGanaPunto.innerText= "¡Punto para la Pc! 👎"
   sonidoLoser()
@@ -165,8 +182,8 @@ function reiniciarJuego() {
   elegiTuArma.classList.remove("disabled");
   mensaje.classList.add("visibility");
 
-  let userScore = 0;
-  let pcScore = 0;
+  userScore = 0;
+  pcScore = 0;
 
   //se reinician los puntos, se desactiva la visualizacion de los festejos y se vuelve a las imagenes iniciales del juego
 
