@@ -141,8 +141,7 @@ mensaje.classList.remove("visibility");
     else if (pcScore === 3){
         festejoPc.classList.remove("disabled");
         reiniciar.classList.remove("disabled");
-        // reiniciar.addEventListener("click", reiniciarJuego)
-    }
+        }
     }
     //Una vez alcanzados los 3 puntos se deshabilitará la opción de elegir la próxima mano y se habilitará el botón para "reiniciar" el juego.
 
